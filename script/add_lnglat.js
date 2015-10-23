@@ -27,7 +27,6 @@ addLatLng._transform = function(data, encoding, cb) {
     cb();
     return;
   }
-  console.log(address);
 
   service.geocode(address, function(err, results) {
     if (err) {
