@@ -1,0 +1,27 @@
+{
+  "name": "youbora-map",
+  "version": "1.0.0",
+  "description": "Youbora's map",
+  "main": "index.js",
+  "dependencies": {
+    "csv-stream": "^0.1.3",
+    "node-geocoder": "^3.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lightstream-company/youbora-map.git"
+  },
+  "keywords": [
+    "youbora"
+  ],
+  "author": "Lightstream Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lightstream-company/youbora-map/issues"
+  },
+  "homepage": "https://github.com/lightstream-company/youbora-map#readme"
+}
