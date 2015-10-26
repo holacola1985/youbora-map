@@ -29,3 +29,4 @@ node_modules
 #built files
 public/js/*.js
 public/css/*.css
+public/css/*.map
