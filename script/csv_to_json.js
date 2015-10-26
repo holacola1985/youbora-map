@@ -36,7 +36,7 @@ format._transform = function transform(data, encoding, cb) {
     id: data.Start.replace(' ', '-') + '-' + data.Hash,
     geojson: {
       type: 'Point',
-      cooridnates: [parseFloat(data['lng\r'].replace('\r', '')), parseFloat(data.lat)]
+      coordinates: [parseFloat(data.lat), parseFloat(data['lng\r'].replace('\r', ''))]
     }
   };
   this.push(item);
