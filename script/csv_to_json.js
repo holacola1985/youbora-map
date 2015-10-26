@@ -26,6 +26,7 @@ format._transform = function transform(data, encoding, cb) {
   var item = {
     data: {
       city: data.City,
+      country: data.Country,
       start: data.Start,
       end: data.End,
       duration: data.Duration,
