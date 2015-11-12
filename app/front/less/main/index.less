@@ -1,0 +1,68 @@
+@keyframes pop {
+  0%{
+    transform: scale(6.5);
+    opacity: 0;
+  }
+  25%{
+    opacity: 1;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+body{
+  background: #ccc;
+}
+
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@color-error: #CA1667;
+@color-normal: #428bca;
+@size: 20px;
+.marker{
+  position: absolute;
+  width: @size;
+  height: @size;
+  //border: 1px solid fade(@color, 40);
+  top: -@size/2;
+  left: -@size/2;
+  background: fade(@color-normal, 30);
+  border-radius: @size/2;
+  animation: pop 0.3s 0.1s backwards; 
+  transition: transform 0.1s;
+  .center{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: fade(white, 90);
+    border-radius: 4px;
+    top: (@size/2) - 1px;
+    left: (@size/2) - 1px;
+  }
+  &.delayed{
+    background: fade(@color-error, 30);
+  }
+}
+
+.info{
+  border-spacing: 0;
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
