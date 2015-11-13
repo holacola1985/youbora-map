@@ -1,5 +1,8 @@
 'use strict';
 var _ = require('lodash');
+var path = require('path');
+var lightstreamConfig = require('./config');
+var Handlebars = require('handlebars');
 
 module.exports = function(grunt) {
 
@@ -79,6 +82,25 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['browserify'].concat(less_dev_task).concat(['watch']));
   grunt.registerTask('prod', ['browserify', 'uglify'].concat(less_prod_task));
 
+  grunt.registerTask('nginx', function() {
+    var source = grunt.file.read('./nginx.conf.hbs');
+    var template = Handlebars.compile(source);
+    var data = {
+      hostname: lightstreamConfig.public.hostname,
+      ws_port: lightstreamConfig.websocket.port,
+      api_port: lightstreamConfig.api.port
+    };
+    data.path = __dirname;
 
+    var content = template(data);
+    grunt.file.write('./nginx.conf', content);
+    var symlink_cmd = [
+      'ln -s',
+      path.join(__dirname, 'nginx.conf'),
+      path.join('$NGINX_CONF_PATH/sites-enabled/', lightstreamConfig.public.hostname)
+    ].join(' ');
+    grunt.log.ok(['do not forget to create the symlink']);
+    grunt.log.ok([symlink_cmd]);
+  });
 
 };

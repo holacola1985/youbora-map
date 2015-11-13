@@ -27,6 +27,9 @@ build/Release
 node_modules
 
 #built files
-public/js/*.js
 public/css/*.css
 public/css/*.map
+public/js/*.js
+nginx.conf
+config/*.json
+app/node

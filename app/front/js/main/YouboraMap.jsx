@@ -1,9 +1,6 @@
 import React from 'react';
 import HashTable from './HashTable.jsx';
-import {
-  Map, MapboxLayer, Layer, Marker, Popup
-}
-from 'mapbox-react';
+import { Map, MapboxLayer, Layer, Marker, Popup } from 'mapbox-react';
 
 class YouboraMap extends React.Component {
 
@@ -51,7 +48,7 @@ class YouboraMap extends React.Component {
       </Marker>;
     });
     return <Map map={this.props.map}>
-      <MapboxLayer url="mapbox.dark"/>
+      <MapboxLayer url="benoitarguel.f1f06bd4"/>
       <Layer>
         {markers}
       </Layer>
@@ -60,5 +57,4 @@ class YouboraMap extends React.Component {
 
 }
 
-export
-default YouboraMap;
+export default YouboraMap;

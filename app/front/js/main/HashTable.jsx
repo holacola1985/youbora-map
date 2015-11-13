@@ -24,5 +24,4 @@ class HashTable extends React.Component {
   }
 }
 
-export
-default HashTable;
+export default HashTable;
