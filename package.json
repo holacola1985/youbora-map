@@ -18,7 +18,7 @@
     "handlebars": "^4.0.4",
     "jquery": "^2.1.4",
     "lightstream-backbone": "^0.1.1",
-    "lightstream-socket": "^0.4.3",
+    "lightstream-socket": "^0.4.4",
     "lodash": "^3.10.1",
     "mapbox-react": "^0.2.1",
     "mapbox.js": "^2.2.2",
