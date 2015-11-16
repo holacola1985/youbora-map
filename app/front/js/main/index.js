@@ -27,7 +27,7 @@ var Collection = Backbone.Collection.extend({
   var options = {
     retry_interval: 5000
   };
-  var socket = new MapboxSocket('ws://' +  config.hostname + '/socket/', 'item', options);
+  var socket = new MapboxSocket('ws://' +  config.hostname + '/socket/', 'view', options);
 
   let map = L.map('map');
   map.setView([0, 0], 2);

@@ -18,15 +18,11 @@ function getApiUrl(obj) {
   return url.format(_.extend(obj, urlParam));
 }
 
-console.log(getApiUrl({
-  pathname: 'api/items/item'
-}));
-
 function send(item, cb) {
   request({
     method: 'POST',
     uri: getApiUrl({
-      pathname: 'api/items/item'
+      pathname: 'api/items/view'
     }),
     json: {
       item: item

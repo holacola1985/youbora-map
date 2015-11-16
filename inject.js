@@ -34,7 +34,7 @@ function iterateOverItems() {
       request({
         method: 'POST',
         uri: getApiUrl({
-          pathname: 'api/items/item'
+          pathname: 'api/items/view'
         }),
         json: {
           item: item
