@@ -1,7 +1,6 @@
 'use strict';
 import $ from 'jquery';
 import Backbone from 'backbone';
-import moment from 'moment';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import L from 'mapbox.js';
@@ -20,7 +19,6 @@ var Collection = Backbone.Collection.extend({
   model: ItemBackboneModel
 });
 
-const TIME_FACTOR = 0.1;
 
 (function(config) {
 
@@ -49,15 +47,12 @@ const TIME_FACTOR = 0.1;
   });
 
   socket.on('new_items', function (item) {
+    if(item.data.ended){
+      setTimeout(function(){
+        collection.remove(collection.get(item.id));
+      }, 5000);
+    }
     collection.set([item], { remove:false });
-    collection.on('add', (model) => {
-      const start = moment(model.get('data').start, 'MM/DD/YY H:mm');
-      const end = moment(model.get('data').end, 'MM/DD/YY H:mm');
-      const delta = end.diff(start);
-      setTimeout(() => {
-        collection.remove(model)
-      }, delta * TIME_FACTOR);
-    });
   });
 
   socket.on('error', function (error) {

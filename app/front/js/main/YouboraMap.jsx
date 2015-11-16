@@ -11,7 +11,7 @@ class YouboraMap extends React.Component {
 
   constructor(props) {
     super(props);
-    this.props.collection.on('add remove', () => {
+    this.props.collection.on('add remove change', () => {
       this.setState({
         list: this.props.collection.toJSON()
       });
@@ -30,13 +30,13 @@ class YouboraMap extends React.Component {
       };
       let data = model.data;
       let fields = {
-        city: 'City',
-        delay: 'Delay',
-        start: 'Start'
+        quality: 'Quality'
       };
       let className = 'marker';
-      if(data.delay > 5){
+      if(data.quality && data.quality > 2){
         className += ' delayed';
+      }else if(data.quality){
+        className += ' good';
       }
       return <Marker key={model.id} geojson={model.geojson}>
         <div className={className} style={style}>

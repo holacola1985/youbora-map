@@ -22,7 +22,6 @@
     "lodash": "^3.10.1",
     "mapbox-react": "^0.2.1",
     "mapbox.js": "^2.2.2",
-    "moment": "^2.10.6",
     "node-geocoder": "^3.4.1",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",

@@ -32,6 +32,7 @@ html, body{
 
 @color-error: #CA1667;
 @color-normal: #428bca;
+@color-default: white;
 @size: 20px;
 .marker{
   position: absolute;
@@ -40,7 +41,7 @@ html, body{
   //border: 1px solid fade(@color, 40);
   top: -@size/2;
   left: -@size/2;
-  background: fade(@color-normal, 30);
+  background: fade(@color-default, 30);
   border-radius: @size/2;
   animation: pop 0.3s 0.1s backwards; 
   transition: transform 0.1s;
@@ -55,6 +56,9 @@ html, body{
   }
   &.delayed{
     background: fade(@color-error, 30);
+  }
+  &.good{
+    background: fade(@color-normal, 30);
   }
 }
 
