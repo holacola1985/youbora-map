@@ -22,7 +22,6 @@ var Collection = Backbone.Collection.extend({
 
 (function(config) {
 
-  var map_attached = false;
   var collection = new Collection();
   var options = {
     retry_interval: 5000
@@ -40,10 +39,7 @@ var Collection = Backbone.Collection.extend({
   ReactDOM.render(element, document.getElementById('map-component'));
 
   socket.on('opened', function () {
-    if (!map_attached) {
-      socket.attachMap(map);
-      map_attached = true;
-    }
+    socket.attachMap(map);
   });
 
   socket.on('new_items', function (item) {
